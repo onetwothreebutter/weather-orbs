@@ -6,16 +6,7 @@ const glslify = require('glslify');
 const axios = require('axios');
 
 
-async function getWeatherData() {
-  try {
-    return axios.get('https://api.darksky.net/forecast/0123456789abcdef9876543210fedcba/41.673400,-91.757050');
-  } catch (error) {
-    console.error(error);
-  }
 
-}
-
-console.log(getWeatherData());
 
 
 global.THREE = require('three');
@@ -128,10 +119,45 @@ const sketch = ({ context }) => {
     }
   };
 
-
-
-
-
 };
 
-canvasSketch(sketch, settings);
+
+
+async function getWeatherData() {
+  try {
+
+    let url = 'http://localhost:9000/get-weather-data?lat=41.673400&lon=-91.757050';
+
+    console.log(await axios.post(url));
+    //{
+    // apparentTemperature: 32.72
+    // cloudCover: 0.9
+    // dewPoint: 31.39
+    // humidity: 0.85
+    // icon: "partly-cloudy-night"
+    // nearestStormBearing: 179
+    // nearestStormDistance: 147
+    // ozone: 348.68
+    // precipIntensity: 0
+    // precipProbability: 0
+    // pressure: 1018.4
+    // summary: "Mostly Cloudy"
+    // temperature: 35.54
+    // time: 1552099066 // use momentjs to get time of day?
+    // uvIndex: 0
+    // visibility: 2.2
+    // windBearing: 109
+    // windGust: 7.8
+    // windSpeed: 3.49
+    // } = data.data.currently
+
+    canvasSketch(sketch, settings);
+
+  } catch (error) {
+    console.error(error);
+  }
+
+}
+
+console.log(getWeatherData());
+
