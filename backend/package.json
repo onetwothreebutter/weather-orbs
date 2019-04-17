@@ -1,0 +1,17 @@
+{
+  "name": "weather-orbs-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:lambda": "netlify-lambda serve serverless-functions/src",
+    "build:lambda": "netlify-lambda build serverless-functions/src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "netlify-lambda": "^1.4.2"
+  }
+}
