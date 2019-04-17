@@ -12,14 +12,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@charlesstover/hsl2rgb": "^1.0.4",
     "axios": "^0.18.0",
     "canvas-sketch": "^0.2.0",
     "canvas-sketch-cli": "^1.4.3",
     "canvas-sketch-util": "^1.6.0",
+    "color": "^3.1.0",
+    "color-between": "^1.0.2",
     "date-fns": "^1.30.1",
     "dotenv": "^6.2.0",
+    "eases": "^1.0.8",
     "glsl-hsl2rgb": "^1.1.0",
     "glsl-noise": "0.0.0",
+    "hex-rgb": "^4.0.0",
+    "lerp": "^1.0.3",
+    "moment": "^2.24.0",
+    "prettier": "^1.16.4",
+    "suncalc": "^1.8.0",
     "three": "^0.101.1"
   },
   "devDependencies": {
