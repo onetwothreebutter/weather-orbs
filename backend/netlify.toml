@@ -1,0 +1,2 @@
+[build]
+  functions = "./serverless-functions/dist" #  netlify-lambda reads this
