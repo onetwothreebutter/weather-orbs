@@ -1,3 +1,2 @@
 [build]
-  command = "npm run build:lambda && npm run start:lambda"
-  functions = "./serverless-functions/dist" #  netlify-lambda reads this
+functions = "./backend/serverless-functions/dist" #  netlify-lambda reads this
