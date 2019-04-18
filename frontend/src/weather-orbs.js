@@ -181,7 +181,7 @@ const sketch = ({ context }) => {
 
 async function getWeatherData(lat, lon) {
   try {
-    let url = `http://localhost:9000/get-weather-data?lat=${lat}&lon=${lon}`;
+    let url = `https://weather-orb.netlify.com/.netlify/functions/get-weather-data?lat=${lat}&lon=${lon}`;
     return await axios.post(url);
   } catch (error) {
     console.error(error);
