@@ -1,4 +1,3 @@
 [build]
   command = "npm run build:lambda && npm run start:lambda"
-  functions = "serverless-functions/dist" #  netlify-lambda reads this
-  publish = "build"
+  functions = "./serverless-functions/dist" #  netlify-lambda reads this
