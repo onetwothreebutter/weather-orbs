@@ -1,0 +1,3 @@
+[build]
+  command = "canvas-sketch ./frontend/src/weather-orbs.js --name index --build --inline && npm run build:lambda && npm run start:lambda"
+  functions = "./backend/serverless-functions/dist" #  netlify-lambda reads this
