@@ -20,7 +20,6 @@
     "color": "^3.1.0",
     "color-between": "^1.0.2",
     "date-fns": "^1.30.1",
-    "dotenv": "^6.2.0",
     "eases": "^1.0.8",
     "glsl-hsl2rgb": "^1.1.0",
     "glsl-noise": "0.0.0",

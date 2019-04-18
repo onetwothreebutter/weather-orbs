@@ -221,7 +221,7 @@ function updateWeatherData() {
     );
 
     //Hazel color adjustment
-    colorForTemp = '#a82dff';
+    //colorForTemp = '#a82dff';
     colorForTemp = color(colorForTemp).hsl();
     settings.weatherColor = colorForTemp.color[0] / 360.0; //convert to radians
 
