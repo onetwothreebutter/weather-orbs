@@ -5,6 +5,7 @@
   "main": "weather-orbs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "canvas-sketch ./src/weather-orbs.js --name index --build --dir public/",
     "start:lambda": "netlify-lambda serve serverless-functions/src",
     "build:lambda": "netlify-lambda build serverless-functions/src"
   },
@@ -28,7 +29,9 @@
     "moment": "^2.24.0",
     "prettier": "^1.16.4",
     "suncalc": "^1.8.0",
-    "three": "^0.101.1"
+    "three": "^0.101.1",
+    "netlify-lambda": "^1.4.2",
+    "dotenv": "^6.2.0"
   },
   "devDependencies": {
     "netlify-lambda": "^1.4.2"

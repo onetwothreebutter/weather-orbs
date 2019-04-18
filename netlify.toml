@@ -1,3 +1,3 @@
 #[build]
-  #command = "canvas-sketch /src/weather-orbs.js --name index --build --inline && cd ../backend && npm run build:lambda"
+  #command = "canvas-sketch ../src/weather-orbs.js --name index --build --dir public/ --inline && cd ../../backend && npm run build:lambda"
   #functions = "../backend/serverless-functions/dist" #  netlify-lambda reads this
