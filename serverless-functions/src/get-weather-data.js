@@ -1,7 +1,6 @@
 require('dotenv').config();
 const axios = require('axios');
 const darkskyAPI = `https://api.darksky.net/forecast/${process.env.DARKSKI_API_KEY}/`;
-const openWeatherMapAPI = `https://api.openweathermap.org/data/2.5/weather?lat=&lon=&appid=${process.env.OPENWEATHERMAP_API_KEY}`;
 
 exports.handler = (event, context, callback) => {
 
@@ -10,8 +9,7 @@ exports.handler = (event, context, callback) => {
   let darkskyLocationParam = `${lat},${lon}`;
 
   let apiUrls = [
-    darkskyAPI + darkskyLocationParam,
-    openWeatherMapAPI.replace('lat=', `lat=${lat}`).replace('lon=', `lon=${lon}`)
+    darkskyAPI + darkskyLocationParam
   ];
 
   Promise.all(apiUrls.map( url =>

@@ -5,7 +5,8 @@
   "main": "weather-orbs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "canvas-sketch ./src/weather-orbs.js --name index --build --dir public/",
+    "develop": "canvas-sketch ./src/weather-orbs.js",
+    "build": "canvas-sketch src/weather-orbs.js --html=src/weather-orbs.html --name index --build --dir public",
     "start:lambda": "netlify-lambda serve ./serverless-functions/src",
     "build:lambda": "netlify-lambda build ./serverless-functions/src"
   },

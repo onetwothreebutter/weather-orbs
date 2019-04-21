@@ -4,7 +4,7 @@ const glslify = require("glslify");
 //dependency on 'glsl-noise/simplex/4d' for below glslify
 //dependency on 'glsl-hsl2rgb' for below glslify
 const axios = require("axios");
-const temperaturePalette = require("./temperatureColorPalette");
+const temperaturePalette = require("./utils/temperatureColorPalette");
 const colorBetween = require("color-between");
 const hsl2rgb = require("@charlesstover/hsl2rgb");
 const hex2rgb = require("hex-rgb");
@@ -194,7 +194,7 @@ function updateWeatherData() {
 
   Promise.all([getWeatherData(lat, lon)]).then(res => {
     //extract data from different APIs
-    let { darksky, openWeatherMap } = res[0].data;
+    let { darksky } = res[0].data;
 
     console.log(res[0].data);
 
