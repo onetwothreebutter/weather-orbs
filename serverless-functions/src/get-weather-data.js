@@ -21,7 +21,6 @@ exports.handler = (event, context, callback) => {
 
     let dataToReturn = {
       darksky : res[0].data,
-      openWeatherMap : res[1].data
     };
 
     callback(null, {
