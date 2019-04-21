@@ -47,30 +47,30 @@ const temperaturePalette = [
   },
   {
     temp: '70',
-    color: '#ed6600'
+    color: '#edc000'
   },
   {
     temp: '80',
-    color: '#b80098'
+    color: '#ed7600'
   },
   {
     temp: '90',
-    color: '#db0000'
+    color: '#db1200'
   },
   {
     temp: '100',
-    color: '#7e0000'
+    color: '#ff0070'
   },
   {
-    temp: '#110',
+    temp: '110',
+    color: '#ff00aa'
+  },
+  {
+    temp: '#ff00d4',
     color: 'b80098'
   },
   {
-    temp: '#120',
-    color: 'b80098'
-  },
-  {
-    temp: '#130',
+    temp: '#ff00ec',
     color: 'b80098'
   },
 ];

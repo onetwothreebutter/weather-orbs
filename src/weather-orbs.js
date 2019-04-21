@@ -214,6 +214,8 @@ function updateWeatherData() {
       gradient: (temperature - nearestTemps.floor) / 10
     };
 
+    console.log('nearest', nearestTempColors);
+
     let colorForTemp = colorBetween(
       nearestTempColors.low,
       nearestTempColors.high,
@@ -223,6 +225,7 @@ function updateWeatherData() {
     //Hazel color adjustment
     //colorForTemp = '#a82dff';
     colorForTemp = color(colorForTemp).hsl();
+    console.log(colorForTemp);
     settings.weatherColor = colorForTemp.color[0] / 360.0; //convert to radians
 
     //determine the kind of daylight
