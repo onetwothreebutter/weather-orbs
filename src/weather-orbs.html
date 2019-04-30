@@ -7,6 +7,76 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-{{entry}}
+<div id="canvas-sketch">
+  {{entry}}
+</div>
+
+
+<script>
+
+</script>
+
+<div id="app">
+  <h2>Location</h2>
+  <div>
+    <label for="lat">latitude</label>
+    <input type="text" id="lat" name="lat" v-model="lat"/>
+  </div>
+  <div>
+    <label for="lon">longitude</label>
+    <input type="text" id="lon" name="lon" v-model="lon"/>
+  </div>
+  <div>
+    <button type="button" v-on:click="saveLatLon">save</button>
+  </div>
+  <div>
+    <h2>Auto-detect</h2>
+    <label for="auto-detect-location">Auto-detect current location</label>
+    <input type="checkbox" id="auto-detect-location" v-model="autoDetectLocation" v-on:change="saveAutoDetect">
+    <button type="button" v-on:click="updateLocation">Update Location</button>
+  </div>
+</div>
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      lat: localStorage.getItem('lat'),
+      lon: localStorage.getItem('lon'),
+      autoDetectLocation: (localStorage.getItem('autoDetectLocation') === "true"),
+    },
+    beforeMount() {
+      this.updateLocation();
+    },
+    methods: {
+      saveLatLon: function(event) {
+        localStorage.setItem('lat', this.lat);
+        localStorage.setItem('lon', this.lon);
+        this.autoDetectLocation = false;
+        localStorage.setItem('autoDetectLocation', this.autoDetectLocation);
+      },
+      saveAutoDetect: function(event) {
+        localStorage.setItem('autoDetectLocation', this.autoDetectLocation);
+      },
+      updateLocation: function(event) {
+        if ("geolocation" in navigator && localStorage.getItem('autoDetectLocation') === "true") {
+          /* geolocation is available */
+          navigator.geolocation.getCurrentPosition(function(position) {
+            saveLatLonToLocalStorage(position.coords.latitude, position.coords.longitude);
+          });
+
+          let vueObj = this;
+          function saveLatLonToLocalStorage(lat, lon) {
+            localStorage.setItem('lat', lat);
+            localStorage.setItem('lon', lon);
+            vueObj.lat = lat;
+            vueObj.lon = lon;
+          }
+        }
+      }
+    }
+  })
+</script>
 </body>
 </html>

@@ -189,8 +189,8 @@ async function getWeatherData(lat, lon) {
 }
 
 function updateWeatherData() {
-  const lat = 41.6734;
-  const lon = -91.75705;
+  const lat = localStorage.getItem('lat');
+  const lon = localStorage.getItem('lon');
 
   Promise.all([getWeatherData(lat, lon)]).then(res => {
     //extract data from different APIs
@@ -213,8 +213,6 @@ function updateWeatherData() {
         .color,
       gradient: (temperature - nearestTemps.floor) / 10
     };
-
-    console.log('nearest', nearestTempColors);
 
     let colorForTemp = colorBetween(
       nearestTempColors.low,
