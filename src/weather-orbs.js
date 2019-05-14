@@ -15,6 +15,7 @@ const lerp = require("lerp");
 const eases = require("eases");
 
 global.THREE = require("three");
+global.controls;
 
 // Include any additional ThreeJS examples below
 require("three/examples/js/controls/OrbitControls");
@@ -43,7 +44,7 @@ const sketch = ({ context }) => {
   camera.lookAt(new THREE.Vector3());
 
   // Setup camera controller
-  const controls = new THREE.OrbitControls(camera);
+  controls = new THREE.OrbitControls(camera);
 
   // Setup your scene
   const scene = new THREE.Scene();
