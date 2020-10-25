@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@charlesstover/hsl2rgb": "^1.0.4",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "canvas-sketch": "^0.2.0",
     "canvas-sketch-cli": "^1.4.3",
     "canvas-sketch-util": "^1.6.0",
